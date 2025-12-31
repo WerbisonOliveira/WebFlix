@@ -1,0 +1,40 @@
+.footer {
+    background-image: linear-gradient(to right, #353535 20%, #1c1c1c 100%);
+    color: #FFF;
+}
+
+.credits {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    padding: 1rem;
+}
+
+.credits p {
+    padding-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.credits img {
+    width: 100px;
+    height: 50px;
+}
+
+.credits span {
+    padding-top: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.copy {
+    border-top: 1px solid #8e8e8e;
+    padding: 1.5rem 0;
+    width: 100%;
+    text-align: center;
+}
+
+.copy a {
+    text-decoration: none;
+    color: #FFF;
+    font-weight: bold;
+}

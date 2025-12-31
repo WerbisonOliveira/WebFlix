@@ -1,0 +1,48 @@
+.hiddenButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 8;
+    padding: 0.8rem;
+    margin-right: 0.5rem;
+    background-color: #FFF;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.3);
+    right: 0px;
+    top: 650px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 8;
+    padding: 0.8rem;
+    margin-right: 0.5rem;
+    background-color: #FFF;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.3);
+    right: 0px;
+    top: 650px;
+    visibility: visible;
+    opacity: 0.8;
+    transition: 0.4s;
+}
+
+.button:hover {
+    opacity: 1;
+}
+
+@media (max-width: 950px) {
+
+    .button {
+        top: 620px;
+    }
+}

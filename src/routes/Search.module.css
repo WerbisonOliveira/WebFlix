@@ -1,0 +1,46 @@
+.search {
+    display: flex;
+    flex-direction: column;
+}
+
+.search section {
+    flex: 1;
+}
+
+.title {
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 2rem 0;
+}
+
+.title span {
+    color: #1c7be7;
+}
+
+.container_results {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #CCC;
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: #e7e7e7;
+}
+
+.container_results button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.container_results button span {
+    font-weight: bold;
+    transition: 0.4s;
+}
+
+.container_results button span:hover {
+    color: #b6b6b6;
+}
