@@ -3,7 +3,7 @@
 WebFlix é uma aplicação web desenvolvida com **React** e **TypeScript** que consome a **API do TMDB (The Movie Database)** para exibir filmes e séries de forma moderna e dinâmica.
 
 ## 🚀 Tecnologias Utilizadas
-- React
+- React + Vite
 - TypeScript
 
 ## 📦 Bibliotecas
