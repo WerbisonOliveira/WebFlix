@@ -13,6 +13,6 @@ WebFlix é uma aplicação web desenvolvida com **React** e **TypeScript** que c
 
 ## 📌 Funcionalidades
 - Listagem de filmes e séries
-- Visualização de detalhes (sinopse, avaliação e imagens)
+- Visualização de detalhes (sinopse, avaliação, imagens, data de lançamento, gêneros, temporadas, entre outras informações)
 - Navegação entre páginas no formato SPA
 - Consumo de API externa (TMDB)
