@@ -175,6 +175,263 @@
     transform: translateY(0px);
 }
 
+.container_servers {
+    width: 100%;
+    padding: 3rem 0.3rem;
+}
+
+.container_servers > h2 {
+    max-width: max-content;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    background-color: #1c7be7;
+    border-radius: 10px;
+    margin: 0rem auto 3rem auto;
+}
+
+.container_video {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+}
+
+.video {
+    max-width: 860px;
+    width: 100%;
+    background-color: #FFF;
+    border: 2px solid #FFF;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.container_players {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.server {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    border: 1px solid #000;
+}
+
+.on {
+    background-color: #1c7be7;
+}
+
+.container_temp_ep {
+    display: flex;
+    flex-wrap: wrap;
+    width: 860px;
+    max-width: 100%;
+    margin: 0 auto;
+    justify-content: space-around;
+    gap: 1rem;
+    padding: 2rem 0.3rem;
+    margin-bottom: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.container_temp {
+    position: relative;
+}
+
+.selected_temp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    width: 300px;
+    padding: 0.8rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.selected_temp:hover {
+    transition: 0.3s;
+    border: 1px solid #1c7be7;
+}
+
+.icon_temp {
+    font-size: 1rem;
+}
+
+.animation {
+    transform: rotateZ(180deg)
+}
+
+.container_seasons_options {
+    position: absolute;
+    max-height: 300px;
+    height: max-content;
+    width: 100%;
+    max-width: 300px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 0.5rem;
+    background-color: #eaeaea;
+    border-radius: 10px;
+    margin-top: 0.4rem;
+    border: 1px solid #c1c1c1;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.show_container_seasons_options {
+    position: absolute;
+    max-height: 300px;
+    height: max-content;
+    width: 100%;
+    max-width: 300px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 0.5rem;
+    background-color: #eaeaea;
+    border-radius: 10px;
+    margin-top: 0.4rem;
+    border: 1px solid #c1c1c1;
+    transition: 0.3s;
+    overflow-y: auto;
+    opacity: 1;
+    visibility: visible;
+}
+
+.container_seasons_options::-webkit-scrollbar, .show_container_seasons_options::-webkit-scrollbar {
+    background-color: transparent;
+    width: 5px;
+}
+
+.temp {
+    cursor: pointer;
+    padding: 0.8rem;
+    font-size: 1rem;
+}
+
+.temp:hover {
+    border-radius: 10px;
+    background-color: #ccc;
+}
+
+.container_ep {
+    position: relative;
+}
+
+.selected_ep {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    width: 300px;
+    padding: 0.8rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.selected_ep:hover {
+    transition: 0.3s;
+    border: 1px solid #1c7be7;
+}
+
+.selected_ep > span {
+    text-align: left;
+    width: 100%;
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.icon_ep {
+    margin-left: 0.5rem;
+    font-size: 1rem;
+}
+
+.animation {
+    transform: rotateZ(180deg)
+}
+
+.container_episodes_options {
+    position: absolute;
+    max-height: 300px;
+    height: max-content;
+    width: 100%;
+    max-width: 300px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 0.5rem;
+    background-color: #eaeaea;
+    border-radius: 10px;
+    margin-top: 0.4rem;
+    border: 1px solid #c1c1c1;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.show_container_episodes_options {
+    position: absolute;
+    max-height: 300px;
+    height: max-content;
+    width: 100%;
+    max-width: 300px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 0.5rem;
+    background-color: #eaeaea;
+    border-radius: 10px;
+    margin-top: 0.4rem;
+    border: 1px solid #c1c1c1;
+    transition: 0.3s;
+    overflow-y: auto;
+    opacity: 1;
+    visibility: visible;
+}
+
+.container_episodes_options::-webkit-scrollbar, .show_container_episodes_options::-webkit-scrollbar {
+    background-color: transparent;
+    width: 5px;
+}
+
+.ep {
+    height: 30px;
+    cursor: pointer;
+    padding: 1rem 1rem 2rem 1rem;
+    font-size: 1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.ep:hover {
+    border-radius: 10px;
+    background-color: #ccc;
+}
+
 @media (max-width: 770px) {
     .info {
         width: 95%;
@@ -182,6 +439,20 @@
 
     .tv {
         width: 100%;
+    }
+}
+
+@media (max-width: 675px) {
+    .container_temp_ep {
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 460px) {
+    .container_servers > h2 {
+        font-size: 1.2rem;
     }
 }
 

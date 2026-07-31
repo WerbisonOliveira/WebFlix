@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, type MouseEvent } from "react";
 
 import { useParams, Link } from "react-router-dom";
 
 import { tmdbService } from "../config/axios";
 
 import { AiFillStar } from "react-icons/ai";
+import { FaServer } from "react-icons/fa";
 
 import style from "./Movie.module.css";
 
@@ -44,6 +45,16 @@ const Movie = () => {
 
   const [similar, setSimilar] = useState<Similar | null>(null);
 
+  const changeServer = (embed: string, value: string) => {
+    let video: HTMLIFrameElement | null = document.querySelector(`.${style.video}`);
+    video?.setAttribute("src", `${embed}`);
+    
+    let server = document.querySelectorAll(`.${style.server}`);
+    server.forEach(serverElement => {
+      serverElement.getAttribute("value") !== value ? serverElement.classList.remove(`${style.on}`) : serverElement.classList.add(`${style.on}`)
+    })
+  }
+
   useEffect(() => {
   
       const getMovies = async () => {
@@ -51,26 +62,22 @@ const Movie = () => {
         setMovie(response.data);
   
       }
-  
-      getMovies();
-  
-  }, [id]);
 
-
-  useEffect(() => {
-  
       const getMoviesSimilar = async () => {
         const response = await tmdbService.get(`/movie/${id}/similar?language=pt-BR`);
         setSimilar(response.data);
         window.scrollTo(0, 0);
       }
   
+      getMovies();
+
+      changeServer(`https://redeflixapi.store/filme/${id}`, "1");
+
       getMoviesSimilar();
   
   }, [id]);
 
   const similares = similar?.results.filter((movie) => movie.poster_path !== null);
-
 
   return (
       <main>
@@ -95,6 +102,28 @@ const Movie = () => {
               </div>
               <p><span>Sinopse:</span> <span className={style.synopsis}>{movie?.overview === "" ? "Sem sinopse em português." : movie?.overview}</span></p>
             </div>
+          </article>
+          <article className={style.container_servers}>
+            <h2>Escolha um dos servidores disponíveis:</h2>
+            <div className={style.container_video}>
+              <iframe className={style.video} width="860" height="515" src={`https://redeflixapi.store/filme/${id}`} title={movie?.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" scrolling="no" loading="lazy" allowFullScreen></iframe>
+              <div className={style.container_players}>
+                <button className={`${style.server}` + ` ${style.on}`} value={1} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(`https://redeflixapi.store/filme/${id}`, e.currentTarget.value)}><FaServer/> Servidor 1</button>
+
+                <button className={style.server} value={2} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(`https://api.pomfy.stream/filme/${id}`, e.currentTarget.value)}><FaServer/> Servidor 2</button>
+
+                <button className={style.server} value={3} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(`https://fembed.lol/filme/${id}`, e.currentTarget.value)}><FaServer/> Servidor 3</button>
+
+                <button className={style.server} value={4} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(`https://mgeb.top/embed/${id}`, e.currentTarget.value)}><FaServer/> Servidor 4</button>
+
+                <button className={style.server} value={5} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(`https://player.videasy.to/movie/${id}`, e.currentTarget.value)}><FaServer/> Servidor 5</button>
+
+                <button className={style.server} value={6} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(`https://myembed.biz/filme/${id}`, e.currentTarget.value)}><FaServer/> Servidor 6</button>
+
+                <button className={style.server} value={7} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(`https://embedplayapi.top/embed/${id}`, e.currentTarget.value)}><FaServer/> Servidor 7</button>
+              </div>
+            </div>
+
           </article>
         </section>
         {similares?.length !== 0 && (
