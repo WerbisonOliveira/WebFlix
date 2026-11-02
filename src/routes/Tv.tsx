@@ -74,7 +74,7 @@ const Tv = () => {
 
     const [season, setSeason] = useState<number>(1);
 
-    const [server, setServer] = useState<string>("https://redeflixapi.store/serie");
+    const [server, setServer] = useState<string>("https://redeflixapi.bar/serie");
 
     const [infoSeason, setInfoSeason] = useState<InfoSeason | null>(null);
 
@@ -90,6 +90,7 @@ const Tv = () => {
         setServer(embed)
 
         video?.setAttribute("src", `${embed}/${id}/${season}/${Episode?.episode_number}`);
+        
 
         embed === "https://myembed.biz/serie" ? video?.setAttribute("sandbox", "allow-scripts allow-same-origin allow-forms") : video?.removeAttribute("sandbox")
         embed === "https://myembed.biz/serie" ? video?.setAttribute("referrerpolicy", "no-referrer") : video?.removeAttribute("referrerpolicy");
@@ -213,40 +214,40 @@ const Tv = () => {
                 <article className={style.container_servers}>
                     <h2>Escolha um dos servidores disponíveis:</h2>
                     <div className={style.container_video}>
-                    <iframe className={style.video} width="860" height="515" title={tv?.name} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" scrolling="no" loading="lazy" referrerPolicy='strict-origin-when-cross-origin' allowFullScreen></iframe>
-                    <div className={style.container_temp_ep}>
-                        <div className={style.container_temp}>
-                            <button className={style.selected_temp} title={infoSeason?.name} onClick={() => showTemp()}>{infoSeason?.name}<MdKeyboardArrowDown className={style.icon_temp}/></button>
-                            <div className={style.container_seasons_options}>
-                                {tv?.seasons.filter(season => season.name !== "Especiais" && season.episode_count !== 0).map(season => (
-                                    <span className={style.temp} key={season.id} title={season.name} onClick={() => {showTemp(), setSeason(season.season_number)}}>{season.name}</span>
-                                ))}
+                        <iframe className={style.video} width="860" height="515" title={tv?.name} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" scrolling="no" loading="lazy" referrerPolicy='strict-origin-when-cross-origin' allowFullScreen></iframe>
+                        <div className={style.container_temp_ep}>
+                            <div className={style.container_temp}>
+                                <button className={style.selected_temp} title={infoSeason?.name} onClick={() => showTemp()}>{infoSeason?.name}<MdKeyboardArrowDown className={style.icon_temp}/></button>
+                                <div className={style.container_seasons_options}>
+                                    {tv?.seasons.filter(season => season.name !== "Especiais" && season.episode_count !== 0).map(season => (
+                                        <span className={style.temp} key={season.id} title={season.name} onClick={() => {showTemp(), setSeason(season.season_number)}}>{season.name}</span>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-                        <div className={style.container_ep}>
-                            <button className={style.selected_ep} title={`Episódio ${Episode?.episode_number}: ${Episode?.name}`} onClick={() => showEpisode()}><span>Episódio {Episode?.episode_number}: {Episode?.name}</span><MdKeyboardArrowDown className={style.icon_ep}/></button>
-                            <div className={style.container_episodes_options}>
+                            <div className={style.container_ep}>
+                                <button className={style.selected_ep} title={`Episódio ${Episode?.episode_number}: ${Episode?.name}`} onClick={() => showEpisode()}><span>Episódio {Episode?.episode_number}: {Episode?.name}</span><MdKeyboardArrowDown className={style.icon_ep}/></button>
+                                <div className={style.container_episodes_options}>
                                 {infoSeason?.episodes.map(episode => (
                                     <span className={style.ep} key={episode.id} title={episode.name} onClick={() => {showEpisode(), changeEpisode(episode.episode_number, episode.name)}}>Episódio {episode.episode_number}: {episode.name}</span>
                                 ))}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className={style.container_players}>
-                        <button className={`${style.server}` + ` ${style.on}`} value={"https://redeflixapi.store/serie"} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(e.currentTarget.value)}><FaServer/> Servidor 1</button>
+                        <div className={style.container_players}>
+                            <button className={`${style.server}` + ` ${style.on}`} value={"https://redeflixapi.bar/serie"} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(e.currentTarget.value)}><FaServer/> Servidor 1</button>
 
-                        <button className={style.server} value={"https://api.pomfy.stream/serie"} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(e.currentTarget.value)}><FaServer/> Servidor 2</button>
+                            <button className={style.server} value={"https://api.pomfy.stream/serie"} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(e.currentTarget.value)}><FaServer/> Servidor 2</button>
 
-                        <button className={style.server} value={"https://fembed.lol/serie"} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(e.currentTarget.value)}><FaServer/> Servidor 3</button>
+                            <button className={style.server} value={"https://fembed.lol/serie"} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(e.currentTarget.value)}><FaServer/> Servidor 3</button>
 
-                        <button className={style.server} value={"https://mgeb.top/embed"} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(e.currentTarget.value)}><FaServer/> Servidor 4</button>
+                            <button className={style.server} value={" https://megaembedapi.site/embed/"} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(e.currentTarget.value)}><FaServer/> Servidor 4</button>
 
-                        <button className={style.server} value={"https://player.videasy.to/tv"} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(e.currentTarget.value)}><FaServer/> Servidor 5</button>
+                            <button className={style.server} value={"https://player.videasy.to/tv"} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(e.currentTarget.value)}><FaServer/> Servidor 5</button>
 
-                        <button className={style.server} value={"https://myembed.biz/serie"} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(e.currentTarget.value)}><FaServer/> Servidor 6</button>
+                            <button className={style.server} value={"https://myembed.biz/serie"} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(e.currentTarget.value)}><FaServer/> Servidor 6</button>
 
-                        <button className={style.server} value={"https://embedplayapi.top/embed"} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(e.currentTarget.value)}><FaServer/> Servidor 7</button>
-                    </div>
+                            <button className={style.server} value={"https://embedplayapi.top/embed"} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(e.currentTarget.value)}><FaServer/> Servidor 7</button>
+                        </div>
                     </div>
                 </article>
             </section>

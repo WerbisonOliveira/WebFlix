@@ -71,7 +71,7 @@ const Movie = () => {
   
       getMovies();
 
-      changeServer(`https://redeflixapi.store/filme/${id}`, "1");
+      changeServer(`https://redeflixapi.bar/filme/${id}`, "1");
 
       getMoviesSimilar();
   
@@ -106,15 +106,15 @@ const Movie = () => {
           <article className={style.container_servers}>
             <h2>Escolha um dos servidores disponíveis:</h2>
             <div className={style.container_video}>
-              <iframe className={style.video} width="860" height="515" src={`https://redeflixapi.store/filme/${id}`} title={movie?.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" scrolling="no" loading="lazy" allowFullScreen></iframe>
+              <iframe className={style.video} width="860" height="515" src={`https://redeflixapi.bar/filme/${id}`} title={movie?.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" scrolling="no" loading="lazy" allowFullScreen></iframe>
               <div className={style.container_players}>
-                <button className={`${style.server}` + ` ${style.on}`} value={1} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(`https://redeflixapi.store/filme/${id}`, e.currentTarget.value)}><FaServer/> Servidor 1</button>
+                <button className={`${style.server}` + ` ${style.on}`} value={1} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(`https://redeflixapi.bar/filme/${id}`, e.currentTarget.value)}><FaServer/> Servidor 1</button>
 
                 <button className={style.server} value={2} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(`https://api.pomfy.stream/filme/${id}`, e.currentTarget.value)}><FaServer/> Servidor 2</button>
 
                 <button className={style.server} value={3} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(`https://fembed.lol/filme/${id}`, e.currentTarget.value)}><FaServer/> Servidor 3</button>
 
-                <button className={style.server} value={4} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(`https://mgeb.top/embed/${id}`, e.currentTarget.value)}><FaServer/> Servidor 4</button>
+                <button className={style.server} value={4} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(` https://megaembedapi.site/embed/${id}`, e.currentTarget.value)}><FaServer/> Servidor 4</button>
 
                 <button className={style.server} value={5} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(`https://player.videasy.to/movie/${id}`, e.currentTarget.value)}><FaServer/> Servidor 5</button>
 
