@@ -74,7 +74,7 @@ const Tv = () => {
 
     const [season, setSeason] = useState<number>(1);
 
-    const [server, setServer] = useState<string>("https://redeflixapi.bar/serie");
+    const [server, setServer] = useState<string>("https://redeflixapi.click/serie");
 
     const [infoSeason, setInfoSeason] = useState<InfoSeason | null>(null);
 
@@ -234,7 +234,7 @@ const Tv = () => {
                             </div>
                         </div>
                         <div className={style.container_players}>
-                            <button className={`${style.server}` + ` ${style.on}`} value={"https://redeflixapi.bar/serie"} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(e.currentTarget.value)}><FaServer/> Servidor 1</button>
+                            <button className={`${style.server}` + ` ${style.on}`} value={"https://redeflixapi.click/serie"} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(e.currentTarget.value)}><FaServer/> Servidor 1</button>
 
                             <button className={style.server} value={"https://api.pomfy.stream/serie"} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(e.currentTarget.value)}><FaServer/> Servidor 2</button>
 

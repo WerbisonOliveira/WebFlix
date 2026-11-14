@@ -71,7 +71,7 @@ const Movie = () => {
   
       getMovies();
 
-      changeServer(`https://redeflixapi.bar/filme/${id}`, "1");
+      changeServer(`https://redeflixapi.click/filme/${id}`, "1");
 
       getMoviesSimilar();
   
@@ -106,7 +106,7 @@ const Movie = () => {
           <article className={style.container_servers}>
             <h2>Escolha um dos servidores disponíveis:</h2>
             <div className={style.container_video}>
-              <iframe className={style.video} width="860" height="515" src={`https://redeflixapi.bar/filme/${id}`} title={movie?.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" scrolling="no" loading="lazy" allowFullScreen></iframe>
+              <iframe className={style.video} width="860" height="515" src={`https://redeflixapi.click/filme/${id}`} title={movie?.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" scrolling="no" loading="lazy" allowFullScreen></iframe>
               <div className={style.container_players}>
                 <button className={`${style.server}` + ` ${style.on}`} value={1} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(`https://redeflixapi.bar/filme/${id}`, e.currentTarget.value)}><FaServer/> Servidor 1</button>
 
