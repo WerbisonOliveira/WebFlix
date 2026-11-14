@@ -108,7 +108,7 @@ const Movie = () => {
             <div className={style.container_video}>
               <iframe className={style.video} width="860" height="515" src={`https://redeflixapi.click/filme/${id}`} title={movie?.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" scrolling="no" loading="lazy" allowFullScreen></iframe>
               <div className={style.container_players}>
-                <button className={`${style.server}` + ` ${style.on}`} value={1} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(`https://redeflixapi.bar/filme/${id}`, e.currentTarget.value)}><FaServer/> Servidor 1</button>
+                <button className={`${style.server}` + ` ${style.on}`} value={1} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(`https://redeflixapi.click/filme/${id}`, e.currentTarget.value)}><FaServer/> Servidor 1</button>
 
                 <button className={style.server} value={2} onClick={(e: MouseEvent<HTMLButtonElement>) => changeServer(`https://api.pomfy.stream/filme/${id}`, e.currentTarget.value)}><FaServer/> Servidor 2</button>
 
